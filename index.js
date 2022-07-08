@@ -38,7 +38,7 @@ function parseJson(jsonData) {
 const clients = []; //danh sach client
 /**
  * msg thông qua server sẽ được gửi đi các client khác mà
- * không nhận lại tin của chính mình
+ * client không nhận lại tin của chính mình
  * @param socket
  * @param data
  */
@@ -50,7 +50,7 @@ function broadcast(socket, event, data) {
     }
 }
 
-//Khi có mệt kết nối được tạo giữa Socket Client và Socket Server
+//Khi có mệt kết nối được tạo giữa Socket Client và Socket Server thì cái hàm này được chạy
 io.on('connection', function (socket) {
     console.log(`${socket} Connected`);
     clients.push(socket);   //them client vao danh sach client dang ket noi
@@ -92,7 +92,7 @@ io.on('connection', function (socket) {
     socket.on('UPDATE', (data) => {
         console.log('update')
         broadcast(socket, 'UPDATE', data)
-        io.sockets.emit('MAX30100', Math.floor(Math.random() * 2 + 37))
+        // io.sockets.emit('NHIET_DO', {message : Math.floor(Math.random() * 2 + 37)})
     })
 
     /*disconnect event*/
@@ -104,4 +104,3 @@ io.on('connection', function (socket) {
         // clearInterval(interval1)
     });
 });
-

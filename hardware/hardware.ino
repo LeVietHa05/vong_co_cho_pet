@@ -178,12 +178,12 @@ void CO () {
   CO = analogRead(A0);
 }
 void GuiDuLieu (float nhiptim, float nhietdo, float oxy, int CO, float long, float lat) {
-  client.send("NHIP_TIM", "message", String(nhiptim));
+  client.send("NHIP_TIM", "message", String(nhiptim));  //ex: {"message" : "105"}
   client.send("NHIET_DO", "message", String(nhietdo));
   client.send("OXY", "message", String(oxy));
   client.send("CO", "message", String(CO));
-  client.send("LNG", "message", String(long,6);
-  client.send("LAT", "message", String(lat, 6);
+  client.send("LNG", "message", String(long,6));
+  client.send("LAT", "message", String(lat, 6));
 }
 //da test va chay duoc, MQ2 {MQ2: data} giu lai de tham khao neu can
 //void readMq2() {

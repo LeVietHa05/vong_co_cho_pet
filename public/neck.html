@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
     <!--    <script src="/node_modules/chart.js/dist/chart.min.js"></script>-->
-    <script src="node_modules/chart.js/dist/chart.min.js"></script>
+    <script src="../node_modules/chart.js/dist/chart.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
     <link href="neck.css" rel="stylesheet"/>
     <title>necklace</title>
@@ -110,7 +110,7 @@
     })
     //cam bien CO
     socket.on('CO', (data) => {
-        CO.innerText = data;
+        CO.innerText = data.message;
         addData(COChart, data.message);
         if (COChart.data.datasets[0].data.length > 30) removeData(COChart);
     })

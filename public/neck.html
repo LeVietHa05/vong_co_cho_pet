@@ -236,8 +236,12 @@
             }]
         },
         options: {
-            responsive: false
-        }
+            responsive: false,
+            y: {
+                suggestedMin: 60,
+                suggestedMax: 120,
+            },
+        },
     });
     const temp = document.getElementById('tempChart').getContext('2d');
     const tempChart = new Chart(temp, {
@@ -252,8 +256,12 @@
             }]
         },
         options: {
-            responsive: false
-        }
+            responsive: false,
+            y: {
+                suggestedMin: 35,
+                suggestedMax: 42,
+            },
+        },
     });
     const spo = document.getElementById('spoChart').getContext('2d');
     const spoChart = new Chart(spo, {
@@ -267,9 +275,13 @@
                 tension: 0.1
             }]
         },
-        options: {
-            responsive: false
-        }
+       options: {
+            responsive: false,
+            y: {
+                suggestedMin: 80,
+                suggestedMax: 110,
+            },
+        },
     });
     const co = document.getElementById('COChart').getContext('2d');
     const COChart = new Chart(co, {
@@ -284,7 +296,11 @@
             }]
         },
         options: {
-            responsive: false
+            responsive: false,
+            y: {
+                suggestedMin: 400,
+                suggestedMax: 550,
+            },
         }
     });
 </script>
